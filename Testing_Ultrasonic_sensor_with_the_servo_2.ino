@@ -14,7 +14,7 @@ void setup()
 
 {
    
-  myServo.attach(9); 
+  myServo.attach(10); 
  pinMode(trigPin, OUTPUT);
  pinMode(echoPin, INPUT);  
 }
@@ -34,7 +34,7 @@ void loop(){
 void ultra()
   {
   digitalWrite(trigPin, LOW);
-  delayMicroseconds(2);
+  delayMicroseconds(10);
   digitalWrite(trigPin, HIGH);
   delayMicroseconds(10);
   digitalWrite(trigPin, LOW); // to cntrol the time between opening and closing of the dustbin.
