@@ -3,9 +3,9 @@ In the smart dustbin the work of one of the ultrasonic sensor is to emit a sound
 the sketch below we will be able to fix the distance upto which we want the garbage to be full using a serial monitor.*/
 
 
-int trig_pin = 4;  // initialization of the trigger pin and echo for the ultrasonic sensor. 
+int trig_pin = 2;  // initialization of the trigger pin and echo for the ultrasonic sensor. 
                              
-int echo_pin = 5;
+int echo_pin = 3;
 
 int buzzer_pin = 10; // initialized the buzzer pin
 
