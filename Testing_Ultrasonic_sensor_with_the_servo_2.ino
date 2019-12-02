@@ -14,7 +14,7 @@ void setup()
 
 {
    
-  myServo.attach(10); 
+  myServo.attach(9); 
  pinMode(trigPin, OUTPUT);
  pinMode(echoPin, INPUT);  
 }
