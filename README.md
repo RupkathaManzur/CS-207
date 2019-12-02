@@ -5,7 +5,7 @@ These days everything we use is becoming smart. Like the smartphone, smart tv, s
 
 
 
-I will be replicating the same product of the admin of Techatronics.com and then plan to modify it by adding another ultrasonic sensor to the dustbin which will detect the level of garbage inside it and if the garbage reaches a certain height, a sound will be made using the piezo buzzer thus the owner will understand that the bin is full.
+I will be replicating the same product of the admin of bestschoolprojects.com and then plan to modify it by adding another ultrasonic sensor to the dustbin which will detect the level of garbage inside it and if the garbage reaches a certain height, a sound will be made using the piezo buzzer thus the owner will understand that the bin is full.
 
 
 Materials Required
