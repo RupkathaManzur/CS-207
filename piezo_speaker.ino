@@ -1,7 +1,4 @@
-/*CHALLENGE
-CS lab 2 
-Piezo speaker
-A sketch to demonstrate the tone() function*/
+/* TEST CODE */
 const int piezoPin = 9; //the output pin
 const int frequency = 70; //the pitch of the noise 
 void setup() {
