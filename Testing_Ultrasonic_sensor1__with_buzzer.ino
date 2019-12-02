@@ -59,7 +59,7 @@ void loop ( )
 
         digitalWrite (buzzer_pin, HIGH);
 
-        delay (500);
+        delay (1000);
 
         }
 
