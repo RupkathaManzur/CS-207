@@ -1,6 +1,6 @@
 /*This sketch is for the second ultrasonic sensor to control the servo. 
 When the ultrasonic sensor senses motion it initiates the servo which helps to open the the lid of the smart dustbin.*/
-#include <Servo.h>
+#include <Servo.h> //servo library
 
 Servo myServo;
 
@@ -14,7 +14,7 @@ void setup()
 
 {
    
-  myServo.attach(9); 
+  myServo.attach(9); // servo attached to pin9
  pinMode(trigPin, OUTPUT);
  pinMode(echoPin, INPUT);  
 }
