@@ -38,6 +38,7 @@ void setup()
     
  } 
 
+
 void measure() 
 {  
  digitalWrite(10,HIGH);
@@ -124,3 +125,8 @@ if ( dist< 30 )
 }
 Serial.print(dist);
 }
+
+/* Part of the code to control the servo is taken from bestschoolprojects.com
+
+Admin. “Smart Dustbin using Arduino”. bestschoolprojects.com. May 14, 2019.*/
+
