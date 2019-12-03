@@ -42,6 +42,6 @@ void ultra()
   distance = duration*0.034/2;
   }
 
-  /* This code is from the main project of the Smart Dustbin of the guys Techatronics.com with a few changes made according to the size and feature of the dustbin.
+  /* This code is from the main project of the Smart Dustbin of the guys bestelectronicsproject.com with a few changes made according to the size and feature of the dustbin.
   citation
-  Admin. “Smart Dustbin using Arduino”. bestschoolprojects.com. May 14, 2019.*/
+  Admin. “Smart Dustbin using Arduino”. bestelectronicsprojects.com. May 14, 2019.*/
