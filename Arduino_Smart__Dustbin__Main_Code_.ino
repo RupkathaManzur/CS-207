@@ -12,11 +12,11 @@ int echoPin2 = 5;
 
 
 int servoPin = 9;    //Initialize servo pin
-long duration, dist, average;   // declaring of fuctions for servo measurement.
+long duration, dist, average;   // declaring of variables for servo measurement.
 long aver[3];   //array for average
 
  int buzzerPin= 10;
- int time;    // declaring functions for controlling buzzer.
+ int time;    // declaring variables for controlling buzzer.
  int distance;
 
 void setup() 
