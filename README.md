@@ -20,6 +20,7 @@ In addition, the following materials are required:
 -Jumper wires
 
 A reference to the website from where the project is inspired is given below-
+
 Admin. “Smart Dustbin using Arduino”. bestelectronicprojects.com. May 14, 2019.
      https://www.bestelectronicprojects.com/2019/05/smart-dustbin-using-arduino.html
 
