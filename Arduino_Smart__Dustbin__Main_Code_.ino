@@ -23,16 +23,16 @@ void setup()
 {       
     Serial.begin(9600); // Serial plotter
 
-    pinMode(trigPin1, OUTPUT);   
+    pinMode(trigPin1, OUTPUT);   //setup pin modes
     pinMode(echoPin1, INPUT);
     pinMode(buzzerPin, OUTPUT); // the buzzer will give out sound.
      
 
-    servo.attach(servoPin);  
+    servo.attach(servoPin);  // setup pinmodes
     pinMode(trigPin2, OUTPUT);  
     pinMode(echoPin2, INPUT);  
     servo.write(0);         //close cap on power on
-    delay(100);
+    delay(100);             // delay time is in microseconds
     servo.detach(); 
 
     
