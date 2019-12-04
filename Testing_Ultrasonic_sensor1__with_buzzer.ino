@@ -9,7 +9,7 @@ int echo_pin = 3;
 
 int buzzer_pin = 10; // initialized the buzzer pin
 
-int time;
+int time;            //variables
 
 int distance; 
 
