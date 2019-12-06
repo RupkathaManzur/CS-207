@@ -3,7 +3,7 @@ In the smart dustbin the work of one of the ultrasonic sensor is to emit a sound
 the sketch below we will be able to fix the distance upto which we want the garbage to be full using a serial monitor.*/
 
 
-int trig_pin = 2;  // initialization of the trigger pin and echo for the ultrasonic sensor. 
+int trig_pin = 2;  
                              
 int echo_pin = 3;
 
@@ -16,23 +16,23 @@ int distance;
 
 
 
-void setup ( ) 
+void setup ( )   // the setup function runs once when you press reset or power the board
 {
 
         Serial.begin (9600); //initializing serial plotter
 
-        pinMode (trig_pin, OUTPUT); //trigger pin as the output pin because we will send the ultrasonic wave through that pin. 
+        pinMode (trig_pin, OUTPUT);  // initialize digital pin 2 (trigpin) as an output.
                                   
                                  
-        pinMode (echo_pin, INPUT);    // echo pin as input pin because we will receive the ultrasonic wave through the echo.
+        pinMode (echo_pin, INPUT);    // initialize digital pin 3 (echopin) as an output.
 
-        pinMode (buzzer_pin, OUTPUT); // the buzzer gives out sound
+        pinMode (buzzer_pin, OUTPUT);  // initialize digital pin 10 (buzzer_pin) as an output.
 }
 
 
 
 
-void loop ( ) 
+void loop ( )    // The loop function runs again and again
 {
 
     digitalWrite (trig_pin, HIGH);
@@ -53,13 +53,14 @@ void loop ( )
 
         {
 
-        Serial.println (" garbage full ");
+        Serial.println (" garbage full ");   /* the serial printer will show "garbage full" when 
+                                               distace between a sensor and garge inside is less than 10*/
 
-        Serial.print (" Distance between sensor and garbage= ");              
+        Serial.print (" Distance between sensor and garbage= ");       // show the distance between garbage and sensor            
 
         Serial.println (distance);        
 
-        digitalWrite (buzzer_pin, HIGH);
+        digitalWrite (buzzer_pin, HIGH);  // the buzzer will make sound
 
         delay (1000);
 
@@ -67,15 +68,18 @@ void loop ( )
 
   else {
 
-        Serial.println (" Space left for garbage ");
+        Serial.println (" Space left for garbage ");   /* the serial printer will show "Space left for garbage" when 
+                                                          distace between a sensor and garge inside is more than 10*/
 
-        Serial.print (" Distance between sensor and garbage= ");              
+        Serial.print (" Distance between sensor and garbage= ");   // show the distance between garbage and sensor
+              
 
         Serial.println (distance);        
 
-        digitalWrite (buzzer_pin, LOW);
+        digitalWrite (buzzer_pin, LOW);     //the buzzer will not make sound
 
-        delay (500);        
+        delay (500);    //delay between sounds               
+       
 
   } 
 
