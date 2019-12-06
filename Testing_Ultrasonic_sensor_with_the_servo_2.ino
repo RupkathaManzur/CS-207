@@ -7,26 +7,27 @@ Servo myServo;
 int trigPin = 4; // Initializing the pins of the ultrasonic sensor
 int echoPin = 5;
 
-long distance;
+long distance;   //variables
 long duration;
  
-void setup() 
+void setup()      // the setup function runs once when you press reset or power the board
 
 {
    
-  myServo.attach(9); // servo attached to pin9
- pinMode(trigPin, OUTPUT);
- pinMode(echoPin, INPUT);  
+  myServo.attach(9);           // servo attached to pin9
+ pinMode(trigPin, OUTPUT);    // initialize digital pin 4 (trigpin) as an output.
+ pinMode(echoPin, INPUT);    // initialize digital pin 5 (echopin) as an output.
 }
 
 
  
-void loop(){
+void loop()     // The loop function runs again and again
+{
   ultra();
   myServo.write(0);
   if(distance <= 10) // the servo will open the lid when it senses motion in less than 10 cm
   {
-  myServo.write(90);
+  myServo.write(180);  // the servo moves 180 degrees
   }
   }
 
