@@ -28,7 +28,7 @@ void setup() // the setup function runs once when you press reset or power the b
     pinMode(buzzerPin, OUTPUT);   // initialize digital pin 10 (bizzerPin) as an output.
      
 
-    servo.attach(servoPin);  // setup pinmodes
+    servo.attach(servoPin);     // setup pinmodes
     pinMode(trigPin2, OUTPUT);  // initialize digital pin 4 (trigpin2) as an output.
     pinMode(echoPin2, INPUT);   // initialize digital pin 5 (trigpin2) as an input.
     servo.write(0);         //close cap on power on
@@ -41,13 +41,13 @@ void setup() // the setup function runs once when you press reset or power the b
 
 void measure()     // a function measure is introduced for distance measurement 
 {  
- digitalWrite(10,HIGH);
-digitalWrite(trigPin2, LOW);
-delayMicroseconds(5);
-digitalWrite(trigPin2, HIGH);
-delayMicroseconds(15);
-digitalWrite(trigPin2, LOW);
-pinMode(echoPin2, INPUT);
+ digitalWrite(9,HIGH);        //enable servo pin
+digitalWrite(trigPin2, LOW);  //disable trigpin2
+delayMicroseconds(5);         // waits for 5 microseconds
+digitalWrite(trigPin2, HIGH); // enables trigpin2
+delayMicroseconds(15);        // waits for 15 microseconds 
+digitalWrite(trigPin2, LOW);  //disable trigpin2
+pinMode(echoPin2, INPUT);     //set echopin as input
 duration = pulseIn(echoPin2, HIGH);
 dist = (duration/2) / 29.1;    //obtain distance
 }
@@ -57,13 +57,13 @@ dist = (duration/2) / 29.1;    //obtain distance
 
 void loop()         // The loop function runs again and again
 {
-digitalWrite (trigPin1, HIGH);
+digitalWrite (trigPin1, HIGH);  //enable the pin
 
-    delayMicroseconds (10);
+    delayMicroseconds (10);     // waits for 10 microseconds after enabaling trigpin
 
-    digitalWrite (trigPin1, LOW);
+    digitalWrite (trigPin1, LOW);  // disable the pin
 
-    time = pulseIn (echoPin1, HIGH);
+    time = pulseIn (echoPin1, HIGH); //enable the pin
 
     distance = (time * 0.030) / 2;
 
@@ -82,9 +82,9 @@ digitalWrite (trigPin1, HIGH);
 
         Serial.println (distance);        
 
-        digitalWrite (buzzerPin, LOW);    //the buzzer will not make sound
+        digitalWrite (buzzerPin, HIGH);    //the buzzer will make sound
 
-        delay (500);    //delay between sounds in millisecods but here will be no sound as the buzzerpin is set low.
+        delay (500);    //delay between sounds in millisecods .
 
         }
 
@@ -97,9 +97,9 @@ digitalWrite (trigPin1, HIGH);
    
         Serial.println (distance);        
 
-        digitalWrite (buzzerPin, HIGH);      //the buzzer will make sound               
+        digitalWrite (buzzerPin, LOW);      //the buzzer will not make sound               
    
-        delay (500);   //  //delay between sounds in millisecods   
+        delay (500);   //delay between sounds in millisecods but here will be no sound as the buzzerpin is low
 
   } 
 
@@ -107,21 +107,23 @@ digitalWrite (trigPin1, HIGH);
 
 
 
-  for (int i=0;i<=2;i++) {   //average distance
+  for (int i=0;i<=2;i++)
+  {   
     measure();               
    aver[i]=dist;            
     delay(10);              //delay between measurements
   }
- dist=(aver[0]+aver[1]+aver[2])/3;    
+ dist=(aver[0]+aver[1]+aver[2])/3;    //average distance
+ 
 
 if ( dist< 30 ) // setting condition for the lid to open and close with the measurement of the distance
 {
 
  servo.attach(servoPin); // servo moves to open the lid
   delay(30);              // Wait for 30 milliseconds
- servo.write(0);  
+ servo.write(0);          // the servo is at 0 degress
  delay(3000);          //    // Wait for 3000 milliseconds or 3 seconds 
- servo.write(150);    // servo comes back to the previous position closing the lid.
+ servo.write(180);    // servo moves 180 degrees
  delay(1000);         //// Wait for 1000 milliseconds or 1 seconds
  servo.detach();      
 }
