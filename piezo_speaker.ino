@@ -1,9 +1,10 @@
 /* TEST CODE */
-const int piezoPin = 9; //the output pin
+/* ONE CANUSE THIS CODE TO CHECK THE CONNECTIONS OF THE BUZZER */
+const int piezoPin = 10; //the output pin
 const int frequency = 70; //the pitch of the noise 
 void setup() {
   // put your setup code here, to run once:
-   pinMode(piezoPin, OUTPUT); 
+   pinMode(piezoPin, OUTPUT); //SETTING UP PIN
 
 }
 
