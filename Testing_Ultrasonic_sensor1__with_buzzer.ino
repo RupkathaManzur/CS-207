@@ -19,7 +19,7 @@ int distance;
 void setup ( ) 
 {
 
-        Serial.begin (9600); 
+        Serial.begin (9600); //initializing serial plotter
 
         pinMode (trig_pin, OUTPUT); //trigger pin as the output pin because we will send the ultrasonic wave through that pin. 
                                   
