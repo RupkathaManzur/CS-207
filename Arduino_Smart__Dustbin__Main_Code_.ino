@@ -19,18 +19,18 @@ long aver[3];   //array for average
  int time;    // declaring variables for controlling buzzer.
  int distance;
 
-void setup() 
+void setup() // the setup function runs once when you press reset or power the board
 {       
     Serial.begin(9600); // Serial plotter
 
-    pinMode(trigPin1, OUTPUT);   //setup pin modes
-    pinMode(echoPin1, INPUT);
-    pinMode(buzzerPin, OUTPUT); // the buzzer will give out sound.
+    pinMode(trigPin1, OUTPUT);    // initialize digital pin 2 (trigpin1) as an output.
+    pinMode(echoPin1, INPUT);     // initialize digital pin 3 (echopin1) as an iutput.
+    pinMode(buzzerPin, OUTPUT);   // initialize digital pin 10 (bizzerPin) as an output.
      
 
     servo.attach(servoPin);  // setup pinmodes
-    pinMode(trigPin2, OUTPUT);  
-    pinMode(echoPin2, INPUT);  
+    pinMode(trigPin2, OUTPUT);  // initialize digital pin 4 (trigpin2) as an output.
+    pinMode(echoPin2, INPUT);   // initialize digital pin 5 (trigpin2) as an input.
     servo.write(0);         //close cap on power on
     delay(100);             // delay time is in microseconds
     servo.detach(); 
@@ -39,7 +39,7 @@ void setup()
  } 
 
 
-void measure() 
+void measure()     // a function measure is introduced for distance measurement 
 {  
  digitalWrite(10,HIGH);
 digitalWrite(trigPin2, LOW);
@@ -55,7 +55,7 @@ dist = (duration/2) / 29.1;    //obtain distance
 
 
 
-void loop()
+void loop()         // The loop function runs again and again
 {
 digitalWrite (trigPin1, HIGH);
 
@@ -75,29 +75,31 @@ digitalWrite (trigPin1, HIGH);
 
         {
 
-        Serial.println (" garbage full ");
+        Serial.println (" garbage full "); /* the serial printer will show "garbage full" when 
+                                               distace between a sensor and garge inside is less than 10*/
 
-        Serial.print (" Distance between sensor and garbage= ");              
+        Serial.print (" Distance between sensor and garbage= ");  // show the distance between garbage and sensor            
 
         Serial.println (distance);        
 
-        digitalWrite (buzzerPin, LOW);
+        digitalWrite (buzzerPin, LOW);    //the buzzer will not make sound
 
-        delay (500);
+        delay (500);    //delay between sounds in millisecods but here will be no sound as the buzzerpin is set low.
 
         }
 
   else {
 
-        Serial.println (" Space left for garbage ");
+        Serial.println (" Space left for garbage ");      /* the serial printer will show "Space left for garbage" when 
+                                                          distace between a sensor and garge inside is more than 10*/
 
-        Serial.print (" Distance between sensor and garbage= ");              
-
+        Serial.print (" Distance between sensor and garbage= ");     // show the distance between garbage and sensor
+   
         Serial.println (distance);        
 
-        digitalWrite (buzzerPin, HIGH);
-
-        delay (500);        
+        digitalWrite (buzzerPin, HIGH);      //the buzzer will make sound               
+   
+        delay (500);   //  //delay between sounds in millisecods   
 
   } 
 
@@ -112,15 +114,15 @@ digitalWrite (trigPin1, HIGH);
   }
  dist=(aver[0]+aver[1]+aver[2])/3;    
 
-if ( dist< 30 ) 
+if ( dist< 30 ) // setting condition for the lid to open and close with the measurement of the distance
 {
 
  servo.attach(servoPin); // servo moves to open the lid
-  delay(1);
+  delay(30);              // Wait for 30 milliseconds
  servo.write(0);  
- delay(3000);       
+ delay(3000);          //    // Wait for 3000 milliseconds or 3 seconds 
  servo.write(150);    // servo comes back to the previous position closing the lid.
- delay(1000);
+ delay(1000);         //// Wait for 1000 milliseconds or 1 seconds
  servo.detach();      
 }
 Serial.print(dist);
