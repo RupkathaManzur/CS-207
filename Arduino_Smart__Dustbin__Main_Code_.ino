@@ -124,10 +124,10 @@ if ( dist< 30 ) // setting condition for the lid to open and close with the meas
  servo.write(0);          // the servo is at 0 degress
  delay(3000);          //    // Wait for 3000 milliseconds or 3 seconds 
  servo.write(180);    // servo moves 180 degrees
- delay(1000);         //// Wait for 1000 milliseconds or 1 seconds
- servo.detach();      
+ delay(1000);         // Wait for 1000 milliseconds or 1 seconds
+ servo.detach();      // servo isdetached from the pin
 }
-Serial.print(dist);
+Serial.print(dist);   // prints the distance
 }
 
 /* Part of the code to control the servo is taken from bestschoolprojects.com
