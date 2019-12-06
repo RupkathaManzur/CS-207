@@ -31,9 +31,9 @@ void setup() // the setup function runs once when you press reset or power the b
     servo.attach(servoPin);     // setup pinmodes
     pinMode(trigPin2, OUTPUT);  // initialize digital pin 4 (trigpin2) as an output.
     pinMode(echoPin2, INPUT);   // initialize digital pin 5 (trigpin2) as an input.
-    servo.write(0);         //close cap on power on
-    delay(100);             // delay time is in microseconds
-    servo.detach(); 
+    servo.write(0);             //close cap on power on
+    delay(100);                // delay time is in microseconds
+    servo.detach();            //Detach the Servo variable from its pin
 
     
  } 
