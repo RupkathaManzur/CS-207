@@ -20,6 +20,9 @@ In addition, the following materials are required:
 -Jumper wires
 
 
+
+The connections-
+
 1)First, two pins from the Arduino, GND( ground) and, 5V  are to be connected with the breadboard’s GND (-) and 5V (+).  Breadboard view is available on APPENDIX D
 2) For the first ultrasonic sensor connect -
 VCC on the ultrasonic sensor to the 5V pin on the Arduino.
